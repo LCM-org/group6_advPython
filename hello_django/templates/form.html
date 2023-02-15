@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Prediction Form</title>
+</head>
+<body>
+    <h1>Machine Learning Prediction Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="gre_score">GRE Score:</label>
+        <input type="number" name="gre_score" id="gre_score" required>
+        <br>
+        <label for="toefl_score">TOEFL Score:</label>
+        <input type="number" name="toefl_score" id="toefl_score" required>
+        <br>
+        <label for="lor">Letter of Recommendation:</label>
+        <input type="number" name="lor" id="lor" step="0.01" required>
+        <br>
+        <label for="cgpa">CGPA:</label>
+        <input type="number" name="cgpa" id="cgpa" step="0.01" required>
+        <br>
+        <label for="research">Research Experience:</label>
+        <select name="research" id="research" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
