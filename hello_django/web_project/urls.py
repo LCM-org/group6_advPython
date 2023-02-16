@@ -17,7 +17,9 @@ Including another URLconf
 from django.urls import path
 from .views import predict
 
-
+# url patterns as in website urls. The syntax is url,
+# function to call and name as a tag
+# We can use the name in an html script to redirect it to the url mentioned ''
 urlpatterns = [
     path('', predict, name='predict'),
 ]
