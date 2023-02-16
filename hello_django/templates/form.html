@@ -2,31 +2,95 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Machine Learning Prediction Form</title>
+    <title>Admissions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #0077b6;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #0077b6;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #0077b6;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #005b8a;
+        }
+
+        button[type="button"] {
+            float: right;
+            
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Machine Learning Prediction Form</h1>
+    <h1>Admissions Prediction Form</h1>
     <form method="post">
         {% csrf_token %}
         <label for="gre_score">GRE Score:</label>
         <input type="number" name="gre_score" id="gre_score" required>
-        <br>
         <label for="toefl_score">TOEFL Score:</label>
         <input type="number" name="toefl_score" id="toefl_score" required>
-        <br>
         <label for="lor">Letter of Recommendation:</label>
-        <input type="number" name="lor" id="lor" step="0.01" required>
-        <br>
+        <input type="number" name="lor" id="lor" required>
         <label for="cgpa">CGPA:</label>
         <input type="number" name="cgpa" id="cgpa" step="0.01" required>
-        <br>
         <label for="research">Research Experience:</label>
         <select name="research" id="research" required>
             <option value="1">Yes</option>
             <option value="0">No</option>
         </select>
-        <br>
         <button type="submit">Submit</button>
+        <button type="button" onclick="clearForm()" >Clear Form</button>
     </form>
+
+    <script>
+        function clearForm() {
+            document.getElementById("gre_score").value = "";
+            document.getElementById("toefl_score").value = "";
+            document.getElementById("lor").value = "";
+            document.getElementById("cgpa").value = "";
+            document.getElementById("research").value = "";
+        }
+    </script>
+
 </body>
 </html>

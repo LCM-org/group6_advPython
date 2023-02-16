@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home, predict
+from .views import predict
 
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('predict/', predict, name='predict')
+    path('', predict, name='predict'),
 ]

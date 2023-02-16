@@ -1,11 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Machine Learning Prediction Result</title>
-</head>
-<body>
-    <h1>Machine Learning Prediction Result</h1>
-    <p>The predicted value is: {{ prediction }}</p>
-</body>
-</html>
+<table style="border-collapse: collapse; width: 100%; max-width: 600px; margin: 20px auto; font-family: Arial, sans-serif;">
+    <tr style="background-color: #f2f2f2;">
+        <th style="border: 1px solid #ddd; padding: 8px;">Data</th>
+        <th style="border: 1px solid #ddd; padding: 8px;">Academics</th>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">GRE Score</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">{{ gre_score }}</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+        <td style="border: 1px solid #ddd; padding: 8px;">TOEFL Score</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">{{ toefl_score }}</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Letter of Recommendation</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">{{ lor }}</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+        <td style="border: 1px solid #ddd; padding: 8px;">CGPA</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">{{ cgpa }}</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Research Experience</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">{{ research }}</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+        <td style="border: 1px solid #ddd; padding: 8px;">Admission Prediction</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">{{ prediction }}</td>
+    </tr>
+</table>

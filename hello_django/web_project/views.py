@@ -19,14 +19,20 @@ def predict(request):
 
         # Use the model to make a prediction
         prediction = model.predict(input_data)[0]
+        prediction = str(round(prediction,2) * 100) + " %"
 
         # Render the prediction in the template
-        return render(request, 'prediction.html', {'prediction': prediction})
+        return render(request, 'prediction.html', {
+            'prediction': prediction,
+            'gre_score': gre_score,
+            'toefl_score': toefl_score,
+            'lor': lor,
+            'cgpa': cgpa,
+            'research': research,
+        })
     else:
         # Render the form for the user to enter input
         return render(request, 'form.html')
     
-from django.shortcuts import render
 
-def home(request):
-    return render(request, 'home.html')
+
