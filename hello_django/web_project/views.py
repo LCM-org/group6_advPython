@@ -34,7 +34,7 @@ def predict(request):
         prediction = model.predict(input_data)[0]
         # [0.64523301] predicted value. Use [0] to access it
         logger.debug(model.predict(input_data))
-        prediction = str(round(prediction,2) * 100) + " %"
+        prediction = str(round(prediction, 3) * 100) + " %"
 
         # Render the prediction in the template
         # We include the request object here as per the render syntax.
