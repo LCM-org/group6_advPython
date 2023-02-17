@@ -1,12 +1,19 @@
 from django.shortcuts import render
 import pickle
 import logging
+import os
 
 # Creating a logging object to log data
 logger = logging.getLogger(__name__)
 
+# Get the parent directory of the current directory (i.e. hello_django/)
+parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+
+# Construct the path to the pickle file in the models/ directory
+data_path = os.path.join(parent_dir, 'model', 'lr_final')
+
 # Load the machine learning model from a saved file
-with open(r'C:\Users\user\Desktop\DATA BACK UP\Data_sdsouza33\LAMBTON\SEM 2\BDM 2203 AML\project\model\lr', 'rb') as file:
+with open(data_path, 'rb') as file:
     model = pickle.load(file)
 
 def predict(request):
@@ -19,10 +26,9 @@ def predict(request):
         toefl_score = int(request.POST['toefl_score'])
         lor = float(request.POST['lor'])
         cgpa = float(request.POST['cgpa'])
-        research = int(request.POST['research'])
 
         # Prepare the input data for the model  
-        input_data = [[1,gre_score, toefl_score, lor, cgpa, research]]
+        input_data = [[1,gre_score, toefl_score, lor, cgpa]]
 
         # Use the model to make a prediction
         prediction = model.predict(input_data)[0]
@@ -41,8 +47,7 @@ def predict(request):
             'gre_score': gre_score,
             'toefl_score': toefl_score,
             'lor': lor,
-            'cgpa': cgpa,
-            'research': research,
+            'cgpa': cgpa
         })
     else:
         # Render the form for the user to enter input
