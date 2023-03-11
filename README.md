@@ -1,4 +1,16 @@
+
+
+## Group Members
+- Bhumika Rajendra Babu - C0867081
+- Jovi Fez Bartolata - C0869701
+- Maricris Resma - C0872252
+- Pradeep Kumar Bhatt - C0875486
+- Sunny Prashant Dsouza - C0865183
+----
+
 # Admissions Prediction
+
+
 This is a web application built using Django that estimates a person's chance of getting admitted to a Master's program at a university. The application takes in the following variables: GRE Scores, TOEFL Scores,Letter of Recommendation Strength and Undergraduate GPA. The model was trained using data sourced from Kaggle, and it uses multiple linear regression and backward variable selection to make the predictions.
 
 Diagnostic checks will then be done to ensure that the model satisfies the different regression assumptions (i.e., test for normality of errors, test for multicollinearity, and test for heteroskedasticity). The performance of the model will be further assessed by comparing its error rates using the training and test datasets.
